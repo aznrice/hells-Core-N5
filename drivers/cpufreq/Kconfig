@@ -217,6 +217,10 @@ config CPU_FREQ_GOV_SMARTMAX_M7
 	bool "'smartmax' defaults for m7"
 	depends on CPU_FREQ_GOV_SMARTMAX
 
+config CPU_FREQ_GOV_SMARTMAX_HAMMERHEAD
+	bool "'smartmax' defaults for hammerhead"
+	depends on CPU_FREQ_GOV_SMARTMAX
+
 config CPU_FREQ_GOV_INTERACTIVE
 	tristate "'interactive' cpufreq policy governor"
 	help
