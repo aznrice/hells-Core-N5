@@ -351,11 +351,11 @@ CC		= $(srctree)/scripts/gcc-wrapper.py $(REAL_CC)
 
 CHECKFLAGS     := -D__linux__ -Dlinux -D__STDC__ -Dunix -D__unix__ \
 		  -Wbitwise -Wno-return-void $(CF)
-KERNELFLAGS	= -O3 -munaligned-access -fgcse-lm -fgcse-sm -fgcse-after-reload -fgcse-las -fsched-spec-load -fforce-addr -ffast-math -fsingle-precision-constant -mcpu=cortex-a15 -mtune=cortex-a15 -marm -mfpu=neon-vfpv4 -ftree-vectorize -mvectorize-with-neon-quad -funroll-loops -ftree-loop-im -ftree-loop-ivcanon -fmodulo-sched -fmodulo-sched-allow-regmoves -fivopts -fpredictive-commoning
+KERNELFLAGS	= -O3 -munaligned-access -fgcse-sm -fgcse-las -fsched-spec-load -fforce-addr -ffast-math -fsingle-precision-constant -mcpu=cortex-a15 -mtune=cortex-a15 -marm -mfpu=neon-vfpv4 -ftree-vectorize -mvectorize-with-neon-quad -funroll-loops -ftree-loop-im -ftree-loop-ivcanon -fmodulo-sched -fmodulo-sched-allow-regmoves -fivopts
 MODFLAGS	= -DMODULE $(KERNELFLAGS)
-CFLAGS_MODULE = $(MODFLAGS)
-AFLAGS_MODULE = $(MODFLAGS)
-LDFLAGS_MODULE = -T $(srctree)/scripts/module-common.lds
+CFLAGS_MODULE 	= $(MODFLAGS)
+AFLAGS_MODULE 	= $(MODFLAGS)
+LDFLAGS_MODULE 	= -T $(srctree)/scripts/module-common.lds
 CFLAGS_KERNEL	= $(KERNELFLAGS)
 AFLAGS_KERNEL	= $(KERNELFLAGS)
 CFLAGS_GCOV	= -fprofile-arcs -ftest-coverage
